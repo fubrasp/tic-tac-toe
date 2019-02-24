@@ -1,4 +1,4 @@
-# "Puissance 4" like game
+# "tic-tac-toe" game
 
 ## Prerequisites
 
@@ -27,13 +27,13 @@ Install a venv if needed
 
 ## Course
 
-### "Puissance 4" like game build process
+### "tic-tac-toe" game build process
 
 See [STEPS.md](STEPS.md) for details.
 
 ### Youtube video (french language)
 
-[Youtube_video_link](https://www.youtube.com/watch?v=AgO-6kGTWLs&t=117s)
+[Youtube_video_link]()
 
 ## Versioning
 
