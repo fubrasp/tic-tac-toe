@@ -6,13 +6,13 @@ class GameBoard:
     EMPTY_BOX = 0
     RED_CHIP = -1
     YELLOW_CHIP = 1
-    YELLOW_WIN = 3
-    RED_WIN = -3
     BOARD_WIDTH = 3
+    ROUND_WIN = BOARD_WIDTH
+    CROSS_WIN = -BOARD_WIDTH
     BOARD_LENGTH = BOARD_WIDTH
     BOARD_SIZE = BOARD_LENGTH * BOARD_WIDTH
-    RED_CHIP_STRING = "red"
-    YELLOW_CHIP_STRING = "yellow"
+    CROSS_CHIP_STRING = "cross"
+    ROUND_CHIP_STRING = "round"
 
     def __init__(self):
         # COLUMN
@@ -28,10 +28,10 @@ class GameBoard:
             sum_current_line = 0
             for index_column in range(0, GameBoard.BOARD_WIDTH):
                 sum_current_line += self.board[index_line][index_column]
-            if sum_current_line == GameBoard.YELLOW_WIN:
-                return GameBoard.YELLOW_CHIP_STRING
-            if sum_current_line == GameBoard.RED_WIN:
-                return GameBoard.RED_CHIP_STRING
+            if sum_current_line == GameBoard.ROUND_WIN:
+                return GameBoard.ROUND_CHIP_STRING
+            if sum_current_line == GameBoard.CROSS_WIN:
+                return GameBoard.CROSS_CHIP_STRING
         return ""
 
     def get_vertical_winner(self):
@@ -39,10 +39,10 @@ class GameBoard:
             sum_current_column = 0
             for index_line in range(0, GameBoard.BOARD_LENGTH):
                 sum_current_column += self.board[index_line][index_column]
-            if sum_current_column == GameBoard.YELLOW_WIN:
-                return GameBoard.YELLOW_CHIP_STRING
-            if sum_current_column == GameBoard.RED_WIN:
-                return GameBoard.RED_CHIP_STRING
+            if sum_current_column == GameBoard.ROUND_WIN:
+                return GameBoard.ROUND_CHIP_STRING
+            if sum_current_column == GameBoard.CROSS_WIN:
+                return GameBoard.CROSS_CHIP_STRING
         return ""
 
     def get_diagonals_winner(self):
@@ -53,10 +53,10 @@ class GameBoard:
         # FIXME
         sum_second_diagonal = self.board[0][2] + self.board[1][1] + self.board[2][0]
 
-        if sum_first_diagonal == GameBoard.YELLOW_WIN or sum_second_diagonal == GameBoard.YELLOW_WIN:
-            return GameBoard.YELLOW_CHIP_STRING
-        if sum_first_diagonal == GameBoard.RED_WIN or sum_second_diagonal == GameBoard.RED_WIN:
-            return GameBoard.RED_CHIP_STRING
+        if sum_first_diagonal == GameBoard.ROUND_WIN or sum_second_diagonal == GameBoard.ROUND_WIN:
+            return GameBoard.ROUND_CHIP_STRING
+        if sum_first_diagonal == GameBoard.CROSS_WIN or sum_second_diagonal == GameBoard.CROSS_WIN:
+            return GameBoard.CROSS_CHIP_STRING
         return ""
 
     def get_winner(self):

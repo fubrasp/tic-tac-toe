@@ -16,7 +16,8 @@ class GameView:
         self.gameBoard = GameBoard()
         self.pyGame = pygame
         pygame.init()
-        self.board_picture = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "plateau.png"))
+        pygame.display.set_caption('tic-tac-toe')
+        self.board_picture = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "board.png"))
         taille_plateau_de_jeu = self.board_picture.get_size()
 
         print('taille plateau de jeu')
@@ -26,11 +27,12 @@ class GameView:
 
         self.size = (taille_plateau_de_jeu[0] * 1, taille_plateau_de_jeu[1])
         self.screen = pygame.display.set_mode(self.size)
+        self.screen.fill((255, 255, 255))
         self.screen.blit(self.board_picture, (0, 0))
         pygame.display.flip()
 
-        self.yellowChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "pion_jaune.png"))
-        self.redChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "pion_rouge.png"))
+        self.yellowChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "cross.png"))
+        self.redChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "round.png"))
         self.font = pygame.font.Font("freesansbold.ttf", 15)
 
     def determine_column(self, x):
@@ -50,7 +52,7 @@ class GameView:
             return GameBoard.BOARD_LENGTH-1
 
     def render(self):
-        self.screen.fill((0, 0, 0))
+        self.screen.fill((255, 255, 255))
         self.screen.blit(self.board_picture, (0, 0))
 
         game_board_game_state = self.gameBoard.board

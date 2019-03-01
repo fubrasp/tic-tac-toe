@@ -35,13 +35,13 @@ Take a matrix (or 2d list in our case)
 ]
 ```
 
-corresponds to [tic-tac-toe_board_example](images/tic-tac-toe_board_example.png)
+corresponds to [board_example](images/board_example.png)
 
 caption:
 
 - 0 empty box
-- 1 yellow chip
-- -1 red chip
+- 1 round chip
+- -1 cross chip
 
 #### - Model the turn system 
 
@@ -49,8 +49,8 @@ caption:
 
 #### - Model the wining rules (by summing following box values):
 
-- 1+1+1= **3 yellow win** 
-- -1-1-1 = **-3 red win**
+- 1+1+1= **3 round win** 
+- -1-1-1 = **-3 cross win**
 
 This addition work in all possibles directions (vertical, horizontal, diagonals)
 

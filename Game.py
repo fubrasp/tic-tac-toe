@@ -30,8 +30,8 @@ class Game:
 
     def start(self):
         self.gameView.gameBoard.display()
-        while self.potentialWinner != GameBoard.YELLOW_CHIP_STRING \
-                and self.potentialWinner != GameBoard.RED_CHIP_STRING \
+        while self.potentialWinner != GameBoard.ROUND_CHIP_STRING \
+                and self.potentialWinner != GameBoard.CROSS_CHIP_STRING \
                 and self.playedChips < Game.NUMBER_OF_CHIPS:
             time.sleep(0.05)
             for event in self.gameView.pyGame.event.get():
