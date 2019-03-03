@@ -17,9 +17,9 @@ class Game:
 
     def get_gamer(self):
         if self.playedChips % 2 == 0:
-            gamer_id = GameBoard.YELLOW_CHIP
+            gamer_id = GameBoard.ROUND_CHIP
         else:
-            gamer_id = GameBoard.RED_CHIP
+            gamer_id = GameBoard.CROSS_CHIP
         return gamer_id
 
     def display_winner(self):

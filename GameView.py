@@ -31,8 +31,8 @@ class GameView:
         self.screen.blit(self.board_picture, (0, 0))
         pygame.display.flip()
 
-        self.yellowChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "cross.png"))
-        self.redChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "round.png"))
+        self.crossChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "cross.png"))
+        self.roundChip = pygame.image.load(os.path.join(GameView.IMAGE_DIRECTORY, "round.png"))
         self.font = pygame.font.Font("freesansbold.ttf", 15)
 
     def determine_column(self, x):
@@ -60,10 +60,10 @@ class GameView:
         self.gameBoard.display()
         for i in range(len(game_board_game_state)):
             for j in range(len(game_board_game_state[i])):
-                if game_board_game_state[i][j] == GameBoard.YELLOW_CHIP:
-                    self.screen.blit(self.yellowChip, (8.75 + 97 * j, 8.4 + 97.5 * i))
+                if game_board_game_state[i][j] == GameBoard.ROUND_CHIP:
+                    self.screen.blit(self.roundChip, (8.75 + 97 * j, 8.4 + 97.5 * i))
                 pygame.display.flip()
-                if game_board_game_state[i][j] == GameBoard.RED_CHIP:
-                    self.screen.blit(self.redChip, (8.75 + 97 * j, 8.4 + 97.5 * i+1))
+                if game_board_game_state[i][j] == GameBoard.CROSS_CHIP:
+                    self.screen.blit(self.crossChip, (8.75 + 97 * j, 8.4 + 97.5 * i + 1))
                 pygame.display.flip()
 

@@ -4,8 +4,8 @@
 
 class GameBoard:
     EMPTY_BOX = 0
-    RED_CHIP = -1
-    YELLOW_CHIP = 1
+    CROSS_CHIP = -1
+    ROUND_CHIP = 1
     BOARD_WIDTH = 3
     ROUND_WIN = BOARD_WIDTH
     CROSS_WIN = -BOARD_WIDTH
@@ -76,11 +76,11 @@ class GameBoard:
 
     def put_chip(self, line, column, gamer):
         if self.board[line][column] == GameBoard.EMPTY_BOX:
-            if gamer == GameBoard.YELLOW_CHIP:
-                self.board[line][column] = GameBoard.YELLOW_CHIP
+            if gamer == GameBoard.ROUND_CHIP:
+                self.board[line][column] = GameBoard.ROUND_CHIP
                 return True
             else:
-                self.board[line][column] = GameBoard.RED_CHIP
+                self.board[line][column] = GameBoard.CROSS_CHIP
                 return True
         return False
 
