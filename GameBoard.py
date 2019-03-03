@@ -27,6 +27,7 @@ class GameBoard:
         for index_line in range(0, GameBoard.BOARD_LENGTH):
             sum_current_line = 0
             for index_column in range(0, GameBoard.BOARD_WIDTH):
+                print(str(index_line)+"-"+str(index_column))
                 sum_current_line += self.board[index_line][index_column]
             if sum_current_line == GameBoard.ROUND_WIN:
                 return GameBoard.ROUND_CHIP_STRING

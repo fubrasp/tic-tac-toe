@@ -10,7 +10,7 @@ Install a venv if needed
 ### Create a virtualenv
 
 ```bash
-    cd puissance4Like
+    cd morpion
     virtualenv venv 
 ```
 ### Install dependancies
